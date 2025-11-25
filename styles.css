@@ -1,0 +1,902 @@
+/* Styles by Laura Richter */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Pinyon+Script&display=swap');
+
+/* CSS Reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Root Variables */
+:root{
+    --dark-teal: #5d797e;
+    --light-teal: #779ba1;
+    --dark-pink: #b48482;
+    --light-pink: #dab0a8;
+    --tan: #e9dec9;
+    --dk-gray: #292929;
+    --white: #fff;
+    --error-red: #d12f24;
+    --body-font: 'Libre Baskerville', serif;
+    --header-font: 'Pinyon Script', serif;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+     --transition: all 0.5s ease;
+}
+
+/* Global Styles - */
+body{
+    font-family: var(--body-font);
+    font-size: 1em;
+    line-height: 1.4em;
+    min-width: 320px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+img{
+    width: 150px;
+}
+
+h2{
+    font-family: var(--body-font);
+    font-weight: bold;
+    font-size: 1.75em;
+    line-height: 1.5em;
+}
+h3, button{
+    font-family: var(--body-font);
+    font-size: 1.15em;
+}
+h4{
+    font-family: var(--body-font);
+    font-size: 1.15em;
+}
+.hidden, .cookieHidden, .breadHidden, .cakeHidden{
+    display: none;
+}
+.required{
+    font-family: var(--body-font);
+    color: var(--light-teal);
+    font-weight: bold;
+    font-size: 1.5em;
+}
+.inputError{
+    border: 2px solid var(--error-red);
+}
+.error{
+    color: var(--error-red);
+    font-weight: bold;
+    font-size: 1em;
+    padding-bottom: 1rem;
+}
+strong{
+    font-weight: bold;
+}
+
+/* Skip Link */
+#skip{
+  text-decoration: none;
+  font-family: var(--body-font);
+  background-color: var(--light-teal);
+  border: 2px solid var(--light-teal);
+  color: var(--dk-gray);
+  padding: 0.25rem 0.5rem;
+  left: 2%;
+  position: absolute;
+  transform: translateY(-1000%);
+  transition: var(--transition);
+}
+
+#skip:focus{
+  transform: translateY(-10%);
+}
+
+#skip:hover{
+  background-color: var(--dark-teal);
+  color: var(--white);
+}
+
+/* Header */
+header{
+    position: relative;
+    /* background-color: var(--white); */
+}
+h1{
+    font-family: var(--header-font);
+    color: var(--dark-teal);
+    font-size: 3em;
+    line-height: 3rem;
+    text-align: center;
+    padding-top: 3rem;
+}
+.primary img{
+    display: block;
+    margin: 0 auto;
+    padding: 1rem;
+    width: 90px;
+}
+.hero-img{
+    z-index: 2;
+    width: 100%;
+    transform: scaleX(-1);
+}
+blockquote{
+    position: absolute;
+    left: 2%;
+    top: 80%;
+    background-color: rgba(218, 176, 168, 0.9);
+    color: var(--dk-gray);
+    font-family: var(--header-font);
+    font-size: 1.5em;
+    line-height: 2rem;
+    padding: 0.5rem;
+    z-index: 10;
+}
+
+/* Theme Toggle */
+#theme-toggle{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0.5rem;
+    background-color: var(--dark-teal);
+    fill: var(--light-pink);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+/* Navigation Styles */
+nav{
+    font-size: 1.15em;
+}
+.menu-button{
+  cursor: pointer;
+  background-color: var(--light-pink);
+  border: 2px solid var(--light-pink);
+  border-radius: 10px;
+  font-family: var(--body-font);
+  color: var(--dk-gray);
+  display: block;
+  text-align: center;
+  padding: 0.5rem;
+  width: 91%;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  transition: var(--transition);
+}
+
+.menu-button:hover{
+  background-color: var(--dark-pink);
+  color: var(--white);
+}
+
+#menu-toggle{
+  display: none;
+}
+
+.menu{
+  display: none;
+  z-index: 1;
+}
+
+/* Main */
+main{
+    position: relative;
+}
+
+/* Main - Allergy */
+#allergy{
+    text-align: center;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+#allergy h2{
+    padding: 0.25rem;
+}
+
+#allergy svg{
+    width: 100px;
+    background-color: var(--light-pink);
+    border-radius: 50px;
+    padding: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+/* Main - Best Sellers */
+#best{
+    background-color: var(--tan);
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-content: center;
+    gap: 1rem;
+    height: 1150px;
+}
+#best h2{
+    color: var(--dk-gray);
+    text-align: center;
+    grid-column: 1/-1;
+}
+#best h3{
+    display: none;
+}
+#best button{
+    color: var(--dk-gray);
+    background-color: var(--tan);
+    border: none;
+    border-bottom: 2px solid var(--dark-teal);
+    border-radius: 10px;
+    grid-column: 2/3;
+    padding: 0.5rem;
+}
+#best button:hover{
+    color: var(--white);
+    background-color: var(--dark-teal);
+    border: none;
+    border-bottom: 2px solid var(--dark-teal);
+    cursor: pointer;
+    transition: var(--transition);
+}
+#best p{
+    max-width: 50ch;
+    text-align: center;
+    color: var(--dk-gray);
+    grid-column: 2/3;
+}
+#best-cookies, #best-bread, #best-cake{
+    grid-column: 1/-1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 0.5rem;
+    justify-content: center;
+    text-align: center;
+    color: var(--dk-gray);
+}
+#best-cookies{
+    grid-row: 4/5;
+}
+#best-bread{
+    grid-row: 7/8;
+}
+#best-cake{
+    grid-row: 10/11;
+}
+#best #best-cookies img, #best #best-bread img, #best #best-cake img{
+    width: 75px;
+    height: 75px;
+}
+#best #best-cookies h4, #best #best-bread h4, #best #best-cake h4{
+    font-size: 1em;
+}
+#best img{
+    border-radius: 50px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    padding: 1rem;
+    margin: 0 auto;
+    grid-column: 1/2;
+    grid-row: span 2;
+}
+
+/* Main - Play to Win */
+#game{
+    width: 90%;
+    height: 550px;
+    padding: 1rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr 1fr 2fr 2fr 2fr 2fr;
+    gap: 1rem;
+    text-align: center;
+}
+#game h2, #game h3{
+    text-align: center;
+    grid-column: 1/-1;
+}
+#game h4{
+    display: none;
+}
+#game p{
+    max-width: 150ch;
+    grid-column: 1/-1;
+    line-height: 1.5em;
+}
+strong{
+    font-weight: bold;
+    font-size: 1.15em;
+}
+#game form{
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 2rem;
+    justify-content: center;
+    position: relative;
+}
+#game form input[type=submit]{
+    background-color: var(--light-pink);
+    border: 2px solid var(--light-pink);
+    border-radius: 10px;
+    transition: var(--transition);
+    width: 100px;
+    height: 50px;
+    margin: 0 auto;
+    padding: 0.5rem;
+    color: var(--dk-gray);
+    font-weight: bold;
+    font-size: 1.15em;
+    cursor: pointer;
+    grid-column: 1/-1;
+}
+#game form label{
+    font-size: 1.15em;
+    line-height: 1.25em;
+    text-align: right;
+}
+#num1{
+    width: 75px;
+    height: 45px;
+    line-height: 1.25em;
+    background-color: var(--light-pink);
+    color: var(--dk-gray);
+    font-size: 1.5em;
+    font-weight: bold;
+    transition: var(--transition);
+}
+#num1 + p{
+    position: absolute;
+    left: 15%;
+    top: 45%;
+}
+#game form input[type=submit]:hover{
+    background-color: var(--dark-pink);
+    color: var(--white);
+}
+#game section{
+    text-align: center;
+    grid-column: 1/-1;
+}
+#game #results{
+    font-size: 1.5em;
+    line-height: 1.75em;
+    font-weight: bold;
+}
+
+/* Main-Contact */
+#contact{
+    background-color: var(--tan);
+    color: var(--dk-gray);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    height: 785px;
+}
+#contact h2{
+    text-align: center;
+}
+#contact h4{
+    color: var(--dk-gray);
+    text-align: left;
+    font-weight: bold;
+    padding-bottom: 0;
+}
+
+#contact form{
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 730px;
+}
+
+#contact form input, #contact form textarea{
+    line-height: 2.5em;
+    margin-bottom: 1rem;
+}
+
+#contact form fieldset{
+    border: 2px solid var(--light-teal);
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr 4fr;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    padding: 0 1rem;
+}
+#contact form legend{
+    padding: 0.25rem;
+}
+#contact form fieldset input{
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--light-teal);
+    accent-color: var(--light-teal);
+    cursor: pointer;
+}
+
+#contact form input[type=submit]{
+    width: 50%;
+    height: 50px;
+    margin: 0 auto;
+    background-color: var(--light-teal);
+    border: 2px solid var(--light-teal);
+    border-radius: 10px;
+    color: var(--dk-gray);
+    font-weight: bold;
+    font-size: 1.15em;
+    cursor: pointer;
+    transition: var(--transition);
+}
+#contact form input[type=submit]:hover{
+    background-color: var(--dark-teal);
+    color: var(--white);
+}
+#confirm{
+    margin: 0 auto;
+}
+#contact img{
+    width: 95%;
+    clip-path: inset(5% 0 5% 0);
+    display: block;
+    margin: 0 auto;
+}
+
+footer{
+    padding: 0.5rem;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+footer h2{
+    padding-left: 0;
+}
+footer img{
+    display: block;
+    margin: 0 auto;
+}
+footer a{
+    text-decoration: none;
+    color: black;
+}
+#address{
+    margin: 0 auto;
+}
+address{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    font-size: 1em;
+    width: 300px;
+    align-items: center;
+}
+address svg:nth-last-of-type(2){
+    grid-column: 1/2;
+}
+#socials{
+    width: 300px;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    column-gap: 1rem;
+    align-items: center;
+}
+#socials h2{
+    grid-column: 1/-1;
+}
+footer p{
+    font-size: 1em;
+}
+footer svg{
+    width: 35px;
+}
+small{
+    font-size: .75em;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Queries */
+/* Screen Sizes Medium, Large, X-Large */
+@media screen and (min-width: 480px){
+    #best{
+        height: 820px;
+    }
+    #allergy{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(4, auto);
+    }
+    #allergy h2, #allergy p{
+        grid-column: 1/-1;
+    }
+
+    #best-cookies, #best-bread, #best-cake{
+        flex-wrap: nowrap;
+    }
+    #best #best-cookies img, #best #best-bread img, #best #best-cake img{
+        width: 85px;
+        height: 85px;
+    }
+
+    #game{
+        height: 490px;
+    }
+    #num1 + p{
+        left: 35%;
+        top: 40%;
+    }
+
+    footer{
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: repeat(3, auto);
+        column-gap: 2rem;
+        justify-content: center;
+        align-items: center;
+    }
+    #wordmark, small{
+        grid-column: 1/-1;
+    }
+    address, #socials{
+        width: auto;
+    }
+}
+
+@media screen and (min-width: 768px){
+  .menu-button{
+    display: none;
+  }
+
+  .mobile-nav{
+    display: block;
+  }
+
+  .menu{
+    display: flex;
+    margin: 1rem auto;
+    justify-content: center;
+  }
+
+  .mobile-nav ul li a{
+    text-decoration: none;
+    color: var(--dk-gray);
+    font-family: var(--body-font);
+    transition: var(--transition);
+  }
+
+  .mobile-nav ul li a:hover{
+    color: var(--white);
+  }
+
+  .mobile-nav ul li{
+    background-color: var(--light-pink);
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border: 2px solid var(--light-pink);
+    border-radius: 10px;
+    transition: var(--transition);
+  }
+
+  .mobile-nav ul li:hover{
+    background-color: var(--dark-pink);
+    color: var(--white);
+  }
+
+    blockquote{
+        top: 65%;
+        font-size: 2em;
+        line-height: 2.5rem;
+        padding: 1rem;
+    }
+
+    #allergy{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, auto);
+        padding-bottom: 1rem;
+    }
+
+    #best{
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(7, auto);
+        column-gap: 1rem;
+        grid-auto-flow: column;
+        justify-content: space-between;
+        height: 710px;
+    }
+    #best h2{
+        grid-column: 1/-1;
+    }
+    #best img{
+        grid-row: 2/3;
+        grid-row: span 1;
+        grid-column: auto;
+    }
+    #best button{
+        grid-row: 3/4;
+        grid-column: auto;
+    }
+    #best p{
+        grid-row: 4/5;
+        grid-column: auto;
+    }
+    #best-cookies, #best-bread, #best-cake{
+        display: flex;
+        column-gap: 1rem;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 1rem;
+    }
+    #best-cookies{
+        grid-row: 5/6;
+        grid-column: 1/-1;
+        text-align: center;
+    }
+    #best-bread{
+        grid-row: 6/7;
+        grid-column: 1/-1;
+        text-align: center;
+    }
+    #best-cake{
+        grid-row: 7/8;
+        grid-column: 1/-1;
+        text-align: center;
+    }
+    #best #best-cookies img, #best #best-bread img, #best #best-cake img{
+    width: 150px;
+    height: 150px;
+    }
+
+    #game{
+        height: 450px;
+    }
+
+    #contact{
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto auto;
+        column-gap: 1rem;
+        justify-content: center;
+        align-items: center;
+    }
+    #contact form{
+        width: 340px;
+        grid-row: 2/4;
+    }
+    #contact img{
+        max-width: 425px;
+        grid-row: 1/2;
+        align-items: start;
+    }
+    #contact h2{
+        grid-column: 1/-1;
+    }
+    #confirm{
+        grid-column: 2/3;
+        grid-row: 3/4;
+    }
+
+    footer{
+        column-gap: normal;
+        justify-content: space-around;
+    }
+}
+
+@media screen and (min-width: 920px){
+    header{
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        grid-template-rows: repeat(3, auto);
+        justify-items: start;
+    }
+    .primary{
+        grid-column: 1/2;
+        grid-row: 1/2;
+        padding-left: 2rem;
+        padding-top: 2rem;
+    }
+    h1{
+        grid-column: 2/3;
+        grid-row: 1/2;
+        text-align: left;
+        align-self: center;
+        font-size: 3.5em;
+    }
+    nav, .hero-img{
+        grid-column: 1/-1;
+        text-align: left;
+    }
+    nav{
+        padding-left: 2rem;
+    }
+    blockquote{
+        top: 45%;
+        font-size: 3em;
+        line-height: 3.5rem;
+    }
+    #best{
+        height: 685px;
+    }
+
+    #game{
+        height: 300px;
+        grid-template-columns: 75% auto;
+    }
+    #game h2, #game h3{
+        grid-column: 1/-1;
+    }
+    #game p{
+        grid-column: 1/-1;
+    }
+    #game form{
+        grid-column: 1/2;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        position: relative;
+    }
+    #game section{
+        grid-column: 2/3;
+        text-align: right;
+    }
+    #num1 + p{
+        position: absolute;
+        left: 10%;
+        top: 100%;
+    }
+    
+    footer{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto;
+    }
+    #address{
+        grid-column: 1/2;
+        grid-row: 1/2;
+        margin: 0 auto;
+    }
+    #wordmark{
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+    #socials{
+        grid-column: 3/4;
+        grid-row: 1/2;
+        margin: 0 auto;
+    }
+    small{
+        grid-column: 1/-1;
+        grid-row: 2/3;
+    }
+}
+
+/* Interaction Queries for color scheme light and dark and motion preference */
+@media (prefers-color-scheme: light){
+    body{
+    background-color: var(--white);
+    color: var(--dk-gray);
+    }
+    h1{
+        color: var(--dark-teal);
+    }
+    #allergy svg{
+        fill: var(--dk-gray);
+    }
+    footer svg{
+        stroke: var(--dk-gray);
+    }
+    footer a{
+        color: var(--dk-gray);
+    }
+}
+@media (prefers-color-scheme: dark){
+    body{
+        background-color: var(--dk-gray);
+        color: var(--white);
+    }
+    h1{
+        color: var(--dark-pink);
+    }
+    #allergy svg{
+        fill: var(--white);
+    }
+    footer svg{
+        stroke: var(--white);
+    }
+    footer a{
+        color: var(--white);
+    }
+    }
+
+/* Feature Query for :has() that checks if the #menu-toggle is checked */
+@supports (selector(:has(#menu-toggle:checked))) {
+
+nav:has(#menu-toggle:checked) .menu{
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 255px;
+  width: 95%;
+  transform: translateX(-50%);
+  background-color: var(--light-pink);
+  justify-content: center;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+nav:has(#menu-toggle:checked) .menu li{
+  padding: 0.5rem;
+  border: 2px solid var(--dark-pink);
+  transition: var(--transition);
+}
+
+nav:has(#menu-toggle:checked) .menu li:hover{
+  background-color: var(--dark-pink);
+}
+
+nav:has(#menu-toggle:checked) .menu a{
+  text-decoration: none;
+  color: var(--dk-gray);
+  font-family: var(--body-font);
+  font-size: 1.15em;
+}
+
+nav:has(#menu-toggle:checked) .menu a:hover{
+    color: var(--white);
+}
+}
